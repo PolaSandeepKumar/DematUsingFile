@@ -76,19 +76,13 @@ public class HashInHash {
 			currentShareQuantity = currentShareQuantity-newUserShare.getShareQuantity();
 			if (currentShareQuantity==0) {
 				HashInHash.userShareMap.get(newUserShare.getAccountNumber()).remove(newUserShare.getShareName());
+				DatabaseMaintainer.writeEntities(HashInHash.storeUserShareMap(), "UserShare");
 				return;
 			}
 			else {
 				HashInHash.userShareMap.get(newUserShare.getAccountNumber()).get(newUserShare.getShareName()).setShareQuantity(currentShareQuantity);
 				DatabaseMaintainer.writeEntities(HashInHash.storeUserShareMap(), "UserShare");
 			}
-		}
-	}
-	
-	public static void main(String [] args) {
-		Map <String, UserShare> userShares = getUserShareMap(1346867570);
-		if(userShares.isEmpty()) {
-			System.out.println("No shares for the user.");
 		}
 	}
 }

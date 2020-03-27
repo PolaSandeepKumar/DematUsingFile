@@ -55,6 +55,9 @@ public class UserDataHashMap {
 	}
 	
 	public static boolean validateLogin (int userAccountNumber, String userAccountPassword) {
+		if(!(UserDataHashMap.userDataMap.containsKey(userAccountNumber) && userAccountPassword.equals(UserDataHashMap.userDataMap.get(userAccountNumber).getAccountPassword()))) {
+			System.out.println("Enter valid Account number and valid Password combination");	
+		}
 		return UserDataHashMap.userDataMap.containsKey(userAccountNumber) && userAccountPassword.equals(UserDataHashMap.userDataMap.get(userAccountNumber).getAccountPassword());
 	}
 }

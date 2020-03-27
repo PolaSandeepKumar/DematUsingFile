@@ -71,6 +71,11 @@ public class MultiValueHashMap {
 		return userTransactionList;
 	}
 	
+	// Method Created to get list of user Share Names
+	public static List <UserTransaction> getUserTransactionList(int accountNumber){
+		return MultiValueHashMap.userTransactionMap.get(accountNumber);
+	}
+	
 	public static void updateUserTransactionMap(UserTransaction newUserTransaction){
 		if(MultiValueHashMap.userTransactionMap.containsKey(newUserTransaction.getAccountNumber())) {
 			MultiValueHashMap.userTransactionMap.get(newUserTransaction.getAccountNumber()).add(newUserTransaction);			
