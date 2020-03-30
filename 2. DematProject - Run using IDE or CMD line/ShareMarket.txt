@@ -1,0 +1,5 @@
+Dell,60.0,7
+Philips,10.0,10
+LIC,70.0,10
+Panasonic,100.0,10
+Crompton,200.0,20

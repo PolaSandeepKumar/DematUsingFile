@@ -1,0 +1,5 @@
+Dell,60.0,6
+LIC,70.0,10
+Panasonic,300.0,15
+Sanyo,100.0,0
+Amazon,40.0,7
